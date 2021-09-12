@@ -7,7 +7,7 @@ const connectMongo = async() => {
         await mongoose.connect(url);
         console.log("Mongo connected.")     
     } catch (error) {
-        console.log("Not able to connect with mongo" , error);
+        console.log("Error with mongo" , error);
     }
 }
 

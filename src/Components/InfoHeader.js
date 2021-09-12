@@ -1,19 +1,19 @@
-import { Box, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+import { Box, Typography, makeStyles } from "@material-ui/core";
 import React from "react";
 
 const appleStore = 'https://assets.inshorts.com/website_assets/images/appstore.png';
 const googleStore = 'https://assets.inshorts.com/website_assets/images/playstore.png';
 
-const useStyle = makeStyles({
+const useStyle = makeStyles( theme => ({
     container: {
         backgroundColor: '#f44336',
         color: '#ffffff',
         height: 48,
         display: 'flex',
         alignItems: 'center',
-        width: '59%',
-        margin: '0 auto',
+        [theme.breakpoints.down('md')]: {
+          display: 'none'
+        }
     },
     infoText: {
         fontSize: 14,
@@ -23,7 +23,7 @@ const useStyle = makeStyles({
         height: 34,
         marginRight: 17
     }
-})
+}))
 
 export const InfoHeader = () => {
     const style = useStyle();
